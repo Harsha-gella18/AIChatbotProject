@@ -6,21 +6,14 @@
     <title>CHATBOT</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/2.1.0/showdown.min.js"></script>
-    <style>
-        body {
-            font-family: 'Poppins', sans-serif;
-        }
-    </style>
 </head>
-<body class="h-screen w-screen bg-gradient-to-r from-purple-500 to-pink-500">
+<body class="h-screen w-screen bg-gradient-to-r from-cyan-500 to-blue-500">
     <div class="h-screen w-screen flex flex-col bg-transparent">
         <header class="text-4xl font-extrabold text-white mb-4 p-4">
             <h1>CHATBOT</h1>
         </header>
         <main class="flex flex-col h-screen overflow-y-auto">
-            <div id="messageHolder" class="flex flex-col space-y-4 p-4 overflow-y-auto bg-white rounded-lg shadow-md mx-4">
-                <!-- messages will be displayed here -->
-            </div>
+            <div id="messageHolder" class="flex flex-col space-y-4 p-4 overflow-y-auto bg-white rounded-lg shadow-md mx-4"></div>
             <div class="mt-auto">
                 <footer class="p-4 bg-white rounded-lg shadow-md mx-4 flex justify-between">
                     <input
@@ -31,7 +24,7 @@
                         id="chat"
                         style="width: 80%"
                     />
-                    <button id="btn" class="bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded ml-2">
+                    <button id="btn" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded ml-2">
                         Send
                     </button>
                 </footer>
