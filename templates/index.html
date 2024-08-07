@@ -3,40 +3,40 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Chatbot Using Bard</title>
+    <title>CHATBOT</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/2.1.0/showdown.min.js"></script>
-    <style type="text/tailwindcss">
-        @layer base {
-            ul {
-                list-style-type: circle;
-            }
-            ol {
-                list-style-type: decimal;
-            }
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
         }
     </style>
 </head>
-<body class="flex items-center justify-center min-h-screen bg-gray-900 text-gray-100">
-    <div class="w-full max-w-2xl bg-gray-800 shadow-lg rounded-lg overflow-hidden">
-        <header class="bg-gray-700 text-gray-300 p-4">
-            <h1 class="text-2xl font-semibold text-center">CHATBOT😉</h1>
+<body class="h-screen w-screen bg-gradient-to-r from-purple-500 to-pink-500">
+    <div class="h-screen w-screen flex flex-col bg-transparent">
+        <header class="text-4xl font-extrabold text-white mb-4 p-4">
+            <h1>CHATBOT</h1>
         </header>
-        <main class="p-4 h-[60vh] overflow-y-auto bg-gray-800">
-            <div id="messageHolder" class="flex flex-col space-y-4"></div>
+        <main class="flex flex-col h-screen overflow-y-auto">
+            <div id="messageHolder" class="flex flex-col space-y-4 p-4 overflow-y-auto bg-white rounded-lg shadow-md mx-4">
+                <!-- messages will be displayed here -->
+            </div>
+            <div class="mt-auto">
+                <footer class="p-4 bg-white rounded-lg shadow-md mx-4 flex justify-between">
+                    <input
+                        type="text"
+                        class="w-full p-2 pl-10 text-sm text-gray-700 border border-gray-300 rounded-lg"
+                        placeholder="Type your message..."
+                        name="chat"
+                        id="chat"
+                        style="width: 80%"
+                    />
+                    <button id="btn" class="bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded ml-2">
+                        Send
+                    </button>
+                </footer>
+            </div>
         </main>
-        <footer class="bg-gray-700 p-4 flex items-center">
-            <input
-                type="text"
-                class="flex-grow border rounded-md p-2 border-gray-600 bg-gray-900 text-gray-200 shadow-sm focus:border-blue-400 focus:ring-1 focus:ring-blue-400"
-                placeholder="Type your message..."
-                name="chat"
-                id="chat"
-            />
-            <button id="btn" class="ml-4 bg-blue-600 p-2 rounded-md text-gray-100 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400">
-                Send
-            </button>
-        </footer>
     </div>
     <script type="importmap">
     {

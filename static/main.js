@@ -17,26 +17,27 @@ getApiKey().then(apiKey => {
     });
 
     const chatGemini = async (message) => {
-        addMessage(message, "end");
+        addMessage(message, "end", "user");
         let res = await chat.sendMessage(message);
         res = await res.response;
         console.log(res);
         let html = conv.makeHtml(res.text());
-        addMessage(html, "start");
+        addMessage(html, "start", "assistant");
     }
 
-    const addMessage = (msg, direction) => {
+    const addMessage = (msg, direction, userType) => {
         const messageHolder = document.getElementById("messageHolder");
         const message = document.createElement("div");
-        const colour = direction !== "start" ? "bg-blue-600" : "bg-green-600";
-        const alignment = direction !== "start" ? "items-end" : "items-start";
         
+        // Set message color and alignment based on userType
+        const colorClass = userType === "user" ? "bg-blue-500 text-white" : "bg-gray-200 text-gray-600";
+        const alignmentClass = userType === "user" ? "justify-end" : "justify-start";
+        
+        message.className = `flex ${alignmentClass} mb-2`;
         message.innerHTML = `
-        <div class="flex ${alignment}">
-            <div class="${colour} text-white px-4 py-2 rounded-lg shadow-md max-w-md w-fit mb-2">
+            <div class="${colorClass} px-4 py-2 rounded-lg shadow-md max-w-md w-fit">
                 ${msg}
             </div>
-        </div>
         `;
         
         messageHolder.appendChild(message);
